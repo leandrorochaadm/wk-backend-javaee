@@ -7,6 +7,7 @@ import com.leandrorocha.wk.backend.repository.UsuarioRepository;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -20,6 +21,14 @@ public class UsuarioResource {
 	public List<Usuario> listarTodos() {
 
 		return repository.listarTodos();
+	}
+
+	@Path("/{id}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Usuario buscaPorID(@PathParam("id") Long id) {
+
+		return repository.buscarPorId(id);
 	}
 
 }
