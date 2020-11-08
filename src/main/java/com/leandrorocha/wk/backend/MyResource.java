@@ -13,6 +13,6 @@ public class MyResource {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getIt() {
-		return "Você está está conectado ao projeto wk.banckend";
+		return "Conectado ao projeto wk.banckend";
 	}
 }
