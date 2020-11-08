@@ -1,7 +1,9 @@
 package com.leandrorocha.wk.backend.resource;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import com.leandrorocha.wk.backend.model.Usuario;
+import com.leandrorocha.wk.backend.repository.UsuarioRepository;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -11,14 +13,13 @@ import jakarta.ws.rs.core.MediaType;
 @Path("usuarios")
 public class UsuarioResource {
 
+	private UsuarioRepository repository = new UsuarioRepository();
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> listarTodos() {
-		List<String> lista = new ArrayList<String>();
-		lista.add("Leandro");
-		lista.add("Lucas");
+	public List<Usuario> listarTodos() {
 
-		return lista;
+		return repository.listarTodos();
 	}
 
 }
